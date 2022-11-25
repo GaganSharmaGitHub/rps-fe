@@ -1,9 +1,10 @@
 import { io } from "socket.io-client";
 import { refreshBetBoard } from "./betBoard";
+import { BE_URL } from "./data";
 import { scene, User, userData } from "./interfaces";
 import { selectThis } from "./select";
 
-export const socket = io("wss://rps-de.herokuapp.com/");
+export const socket = io(BE_URL);
 
 
 export const placeBet = ()=>{
@@ -39,6 +40,7 @@ export const startSocket = ()=>{
         e.forEach((u)=>{
             if(userData.userId === u.userId){
                 userData.bet = u.bet
+                userData.isWinner = u.isWinner
                 selectThis(userData.bet)
             }
         })

@@ -28,6 +28,7 @@ export interface ScoreBoard{
 export interface User{
   userId: string
   bet: typeof chars[number]
+  isWinner: boolean
 }
 export const scene:Scene={
 type: 'message',
@@ -43,6 +44,7 @@ const userId = urlParams.get('user') || "Gagan";
 export const userData: User = {
   bet: "🗿",
   userId,
+  isWinner: false
 }
 export let changeBet= (b:typeof chars[number]) =>{
   userData.bet = b

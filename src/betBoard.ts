@@ -3,10 +3,10 @@ import { scene, userData } from "./interfaces"
 export const refreshBetBoard = ()=>{
     const ele =document.getElementById("bets-list")
     if(ele){
-        let li = ''
+        let li = '<table>'
         scene.bets.forEach((e)=>{
-            li+=`<li class="${e.userId == userData.userId?"my":"other"}">${e.userId}:${e.bet}</li>`
+            li+=`<tr> <td>${e.isWinner ? "👑 ":"🎩 "}</td><td> ${e.userId}</td><td>${e.bet}</td></tr>`
         })
-        ele.innerHTML = li
+        ele.innerHTML = li +'</table>'
     }
 }
