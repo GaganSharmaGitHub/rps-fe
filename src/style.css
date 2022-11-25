@@ -1,20 +1,21 @@
 #canvas{
   border: 2px black solid;
 }
+
 body{
   padding: 0;
   margin: 0;
-  background-color: white;
-  margin: 0;
+}
+div.body{
   background-image: linear-gradient(to top right, #08316d, #85005da9);
-
+  background-size: cover;
+  overflow: scroll;
 }
 #app{
   display: flex;
   padding: 5px;
   margin: 0;
   box-sizing: border-box;
-  width: 100vw;
   background: url('/skeletor.png');
   background-repeat: no-repeat;
   background-size: 500px;
