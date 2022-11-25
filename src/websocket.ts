@@ -3,7 +3,7 @@ import { refreshBetBoard } from "./betBoard";
 import { scene, User, userData } from "./interfaces";
 import { selectThis } from "./select";
 
-export const socket = io("ws://localhost:8080/");
+export const socket = io("ws://rps-de.herokuapp.com/");
 
 
 export const placeBet = ()=>{
