@@ -1,4 +1,4 @@
-import { scene, userData } from "./interfaces"
+import { scene } from "./interfaces"
 
 export const refreshBetBoard = ()=>{
     const ele =document.getElementById("bets-list")
