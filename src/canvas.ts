@@ -1,5 +1,5 @@
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from "./data"
-import { Entitty, ScoreBoard, userData } from "./interfaces"
+import { chars, Entitty, ScoreBoard, userData } from "./interfaces"
 
 export const canvas:HTMLCanvasElement = document.querySelector("#canvas") as HTMLCanvasElement
 canvas.height = CANVAS_HEIGHT
@@ -14,14 +14,14 @@ contex.textBaseline = "middle";
 export const clear = ()=>contex.clearRect(0, 0, canvas.width, canvas.height);
 
 export const draw = (e:Entitty)=>{
-  if(e.char === '💀') return
-  contex.fillText(e.char, e.x - 5,e. y)
+  if(e[0] === 3) return
+  contex.fillText(chars[e[0]], e[1] - 5,e[2])
   
 }
 export const drawScore=(scores: ScoreBoard)=>{
   let y= 60
   Object.entries(scores).forEach(([k,v])=>{
-    if(userData.bet == k){
+    if(chars[userData.bet] == k){
       contex.strokeRect(20,y-40,70,70)
     }
     contex.fillText(`${k}:${v}`, 20,y)

@@ -1,13 +1,18 @@
 import { BASE_SCORE_BOARD} from "./data"
 export const chars = ["🗿", "🧻","✂️"] as const
 
-
-export interface Entitty{
-    x: number,
-    y: number,
-    direction: number
-    char: (typeof chars[number]) | "💀"
-  }
+export const charIndex = {
+  "🗿":0,
+  "🧻":1,
+  "✂️":2
+}
+export type Entitty = [0|1|2|3, number, number, number]
+// {
+//     x: number,
+//     y: number,
+//     direction: number
+//     char: (typeof chars[number]) | "💀"
+//   }
 export interface Scene{
   type: 'game' | 'message'
   timer: number
@@ -27,7 +32,7 @@ export interface ScoreBoard{
 
 export interface User{
   userId: string
-  bet: typeof chars[number]
+  bet: number
   isWinner: boolean
 }
 export const scene:Scene={
@@ -42,12 +47,10 @@ bets: []
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('user') || "Gagan";
 export const userData: User = {
-  bet: "🗿",
+  bet: 0,
   userId,
   isWinner: false
 }
 export let changeBet= (b:typeof chars[number]) =>{
-  userData.bet = b
+  userData.bet = charIndex[b]
 }
-
-console.log(userData)

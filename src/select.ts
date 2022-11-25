@@ -1,11 +1,11 @@
-import { chars, userData } from "./interfaces"
+import { charIndex, chars, userData } from "./interfaces"
 import { placeBet } from "./websocket"
 
 export const init = () => {
   const allButtons = document.querySelectorAll(".bet_button")
   allButtons.forEach((e) => {
     e.addEventListener('click', () => {
-      userData.bet =e.innerHTML.trim() as any
+      userData.bet =charIndex[e.innerHTML.trim() as typeof chars[number]]
       placeBet()
     })
   })
@@ -21,5 +21,5 @@ export const selectThis = (k: typeof chars[number]) => {
     el.classList.remove("selected")
   })
   document.getElementById(buttonIds[k])?.classList.add("selected")
-  userData.bet = k
+  userData.bet = charIndex[k]
 }

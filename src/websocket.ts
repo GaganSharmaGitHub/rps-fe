@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 import { refreshBetBoard } from "./betBoard";
 import { BE_URL } from "./data";
-import { scene, User, userData } from "./interfaces";
+import { chars, scene, User, userData } from "./interfaces";
 import { selectThis } from "./select";
 
 export const socket = io(BE_URL);
@@ -41,7 +41,7 @@ export const startSocket = ()=>{
             if(userData.userId === u.userId){
                 userData.bet = u.bet
                 userData.isWinner = u.isWinner
-                selectThis(userData.bet)
+                selectThis(chars[userData.bet])
             }
         })
         refreshBetBoard()

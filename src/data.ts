@@ -8,4 +8,4 @@ export const BASE_SCORE_BOARD =() => {return {
   "🧻":0,
 }}
 
-export const BE_URL =  "wss://rps-de.herokuapp.com/"
+export const BE_URL =   "wss://rps-de.herokuapp.com/"//'ws://localhost:8080/'
