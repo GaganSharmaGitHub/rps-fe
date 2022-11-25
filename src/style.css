@@ -1,0 +1,72 @@
+#canvas{
+  border: 2px black solid;
+}
+body{
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  margin: 0;
+  background-image: linear-gradient(to top right, #08316d, #85005da9);
+
+}
+#app{
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  background: url('/skeletor.png');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position-y: 500px;
+}
+.bet_button{
+  font-size: xx-large;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  background-color: rgb(207, 207, 207);
+
+}
+
+
+.bet_button.selected{
+  color: #fff;
+  background-color: #0ba9ca;
+  box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px #0ba9ca, 0 0 30px #0ba9ca,
+    0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
+  -webkit-animation: blink 0.7s infinite alternate;
+  animation: blink 0.7s infinite alternate;
+
+}
+.better{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+
+
+@-webkit-keyframes blink {
+  100% {
+    box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ba9ca,
+      0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
+  }
+}
+
+@keyframes blink {
+  100% {
+    box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ba9ca,
+      0 0 70px #0ba9ca, 0 0 80px #0ba9ca;
+  }
+}
+
+ul#bets-list{
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+  font-size: 40px;
+  border-radius: 20px;
+}
